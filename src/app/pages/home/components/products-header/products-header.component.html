@@ -1,0 +1,36 @@
+<mat-card class="mb-4"> <!-- Margin Bottom of 4-->
+    <div class="flex justify-between">
+        <div>
+            <button mat-button [matMenuTriggerFor]="sortByMenu"> <!--Give the property the name of the menu-->
+                Sort by {{sort}} <!-- calls in the sort property from the products-header.component.ts file -->
+                <mat-icon>expand_more</mat-icon>
+            </button>
+            <mat-menu #sortByMenu="matMenu"> <!-- give a name to target, in this case matMenu -->
+                <button (click)="onSortUpdated('desc')" mat-menu-item>desc</button> <!-- calls in the onSortUpdated func from the products.header.component.ts file -->
+                <button (click)="onSortUpdated('asc')" mat-menu-item>asc</button>
+            </mat-menu>
+        </div>
+        <div clas="flex items-center"> <!--All items get centered-->
+            <div>
+                <button mat-button [matMenuTriggerFor]="menu">
+                    Show {{ itemsShowCount }}
+                    <mat-icon>expand_more</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu"> <!-- This is the number on the R side by the Show button that annotates the number of results -->
+                    <button (click)="onItemsUpdated(12)" mat-menu-item>12</button>
+                    <button (click)="onItemsUpdated(24)" mat-menu-item>24</button>
+                    <button (click)="onItemsUpdated(36)" mat-menu-item>36</button>
+                </mat-menu>
+            </div>
+            <button>
+                <mat-icon>view_list</mat-icon>
+            </button>
+            <button>
+                <mat-icon>view_module</mat-icon>
+            </button>
+            <button>
+                <mat-icon>view_comfy</mat-icon>
+            </button>
+        </div>
+    </div>
+</mat-card> 

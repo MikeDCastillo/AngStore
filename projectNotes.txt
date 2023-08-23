@@ -1,0 +1,36 @@
+Project Creation on cmd line:
+    ng new myProjectName --routing --skip-tests --minimal
+
+***Deleted boiler plate files in project's src -> app -> app.component.ts in the template
+
+Add material frameworks to the project from https://material.angular.io
+    ng add @angular/material
+
+*** in the src -> app -> app.module.ts 
+    *** All modules should be imported there
+
+Add Tailwind: a utility CSS library. 
+Follow steps on the site
+tailwindcss.com/docs/guides/angular
+    npm install -D tailwindcss postcss autoprefixer
+Initialize it immediately after
+    npx tailwindcss init
+Target the content in the tailwind.config.js
+    content: ["./src/**/*.{html,ts}"],
+
+update the apps style sheets
+ src -> app -> styles.css
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities; 
+
+Generate new header component
+    ng g c myComponentName
+        *** when generating new components with this cmd, the src/app/app.module.ts will get updated with the new component too, specifically in the @NgModule({
+            declarations: [
+                myComponentName
+            ],
+        })
+        
+*** The lifecycle hook interface OnInit, gets specifially called after a component or directive has been initilized
+    - its used to perform init logic, configuration, or setup that needs to be done before the componenet can be used

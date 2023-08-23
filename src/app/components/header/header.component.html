@@ -1,0 +1,51 @@
+<mat-toolbar class="max-w-7x1 mx-auto border-x justify-between"> 
+    <!-- mat-toolbar is used for targetting & placing our tools --> 
+    <!-- mx-auto is used to auto and center our container --> 
+    <!-- justify needs the display flex to present space between shopping cart icon and header. mat-toolbar already has this built in -->
+    <a routerLink="home">Code with Sloba store</a>
+    <button mat-icon-button [matMenuTriggerFor]="menu"> <!-- for the mat-icon-button, add you need to tell it what you are triggering on click, in this case the menu. hence, the matMenuTriggerFor="menu" -->
+        <mat-icon
+            [matBadge]="1"
+            matBadgeColor="warn"
+        >shopping_cart</mat-icon>
+    </button> 
+    <!-- mat-badge is used to display the count in cart. matBadgeColor is used to change the 'bubble' around the cart count number -->
+    <!-- mat-icon used to give shopping cart icon -->
+    <mat-menu #menu="matMenu"> <!-- this mat-menu needs to have the same name as the matMenuTriggerFor so it knows the refernece. -->
+        <div class="p-3 divide-y divide-solid"> <!-- P-3 tag for padding, divide tag for padding between rows. division needs to be solid. -->
+            <div class="pb-3 flex justify-between"> <!-- adds padding on bottom -->
+                <span class="mr-16">1 <I></I>tems </span> <!-- mr-16 adds 16 margin -->
+                <a routerLink="cart">View Cart</a> <!-- creates a link to Cart page -->
+            </div>
+            <div class="py-3">
+                <div class="flex justify-between font-light mb-2">
+                    Keyboard x 1
+                    <span class="font-bold"> {{ '150' | currency }}</span> <!-- Adds price under cart button click menu. currency is default $ -->
+                </div>
+                <div class="flex justify-between font-light mb-2">
+                    Keyboard x 1
+                    <span class="font-bold"> {{ '150' | currency }}</span> <!-- Adds price under cart button click menu. currency is default $ -->
+                </div>
+                <div class="flex justify-between font-light mb-2">
+                    Keyboard x 1
+                    <span class="font-bold"> {{ '150' | currency }}</span> <!-- Adds price under cart button click menu. currency is default $ -->
+                </div>
+            </div>
+            <div class="flex justify-between py-3 font-light"> <!-- Flex adds seperation -->
+                Total:
+                <span class="font-bold">{{ '450' | currency }}</span> <!-- Use default $ for currency pipe -->
+            </div>
+            <div class="pt-3 flex justify-between">
+                <button class="bg-rose-600 text-white rounded-full w-9 h-9"> <!--Adds color to button, in this case rose; 600 is the shade of that number. Makes circle out of button. width and height set to 9 -->
+                    <mat-icon>remove_shopping_cart</mat-icon>
+                </button>
+                <button 
+                    routerLink="cart"
+                    class="bg-green-600 text-white rounded-full w-9 h-9"> <!--Adds color to button, in this case rose; 600 is the shade of that number. Makes circle out of button. width and height set to 9 -->
+                    <mat-icon>remove_shopping_cart</mat-icon>
+                </button>
+                </div>
+        </div>
+    </mat-menu>
+
+</mat-toolbar>

@@ -1,0 +1,14 @@
+<mat-drawer-container 
+[autosize]="true"
+class="min-h-full max-w-7xl mx-auto border-x"
+> 
+    <!-- Creates a drawer or sidebar which can pop up or stay open always -->
+    <!-- the autosize detects if something loads dynamically, then it will autosize it based on that -->
+    <!-- Min height is set to full height of window. Max width like on the toolbar. Margin on left &right set to auto -->
+    <mat-drawer mode="side" opened class="p-6"> <!-- Creates the pane/gutter on the left set as Always Open -->
+        <div>Filters</div>  
+    </mat-drawer>
+        <mat-drawer-content class ="p-6"> <!-- P is padding -->
+            <app-products-header></app-products-header> <!-- This line calls into the products-header.component.ts, specifically the selector -->
+        </mat-drawer-content>
+</mat-drawer-container>
